@@ -113,25 +113,25 @@ const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
 
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
-var ucapanWaktu = 'Selamat Malam 🏙️'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🏙️'
 }
 if(time2 < "19:00:00"){
-var ucapanWaktu = 'Selamat Petang 🌆'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌆'
 }
 if(time2 < "18:00:00"){
-var ucapanWaktu = 'Selamat Sore 🌇'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌇'
 }
 if(time2 < "15:00:00"){
-var ucapanWaktu = 'Selamat Siang 🌤️'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌤️'
 }
 if(time2 < "10:00:00"){
-var ucapanWaktu = 'Selamat Pagi 🌄'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌄'
 }
 if(time2 < "05:00:00"){
-var ucapanWaktu = 'Selamat Subuh 🌆'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌆'
 }
 if(time2 < "03:00:00"){
-var ucapanWaktu = 'Selamat Tengah Malam 🌃'
+var ucapanWaktu = 'Welcome To Dark-Love-MD 🌃'
 }
 
 //================== [ DATABASE ] ==================//
@@ -261,7 +261,7 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
 
 Hello World
 
-*_ Dark-Love-MD Is A Simple Bot Made By AY TECH_*.
+*_Dark-Love-MD Is A Simple Bot Made By AY TECH_*.
 
 To Check All Bot Commands Type Your Prefix and allmenu
 `
@@ -277,7 +277,7 @@ ptz.sendMessage(m?.chat, {
         externalAdReply: {
             containsAutoReply: true,
             mediaType: 1,
-            mediaUrl: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb',
+            mediaUrl: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37',
             renderLargerThumbnail: true,
             showAdAttribution: true,
             sourceUrl: global.gc,
@@ -289,10 +289,10 @@ ptz.sendMessage(m?.chat, {
         isForwarded: true,
         mentionedJid: [m?.sender],
         businessMessageForwardInfo: {
-            businessOwnerJid: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb'
+            businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -305,7 +305,7 @@ break
 //=================================================//
 case "allmenu":{
 await adel()
-const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD Bot.*
+const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD V1 Bot.*
 
  ╔┈┈⳹『 ɪɴғᴏ ʙᴏᴛ 」
  ╎❒ NAME BOT: *${global.namabot}*
@@ -315,7 +315,7 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
 
  Welcome To Dark-Love-MD Bot. A Simple Whatsapp Bot.
 
-*Dark-Love-MD* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One. Enjoy Dark-Love-MD  .
+*Dark-Love-MD V1* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One. Enjoy Dark-Love-MD  .
 
 
 Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
@@ -342,7 +342,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}readvo
 │ ❒ ${prefix}tr
 │ ❒ ${prefix}jarak
-│ ❒ ${prefix}kalkulator
+│ ❒ ${prefix}calc ulator
 │ ❒ ${prefix}get
 ╰❑
 
