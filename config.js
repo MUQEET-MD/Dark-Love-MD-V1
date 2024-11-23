@@ -37,7 +37,7 @@ global.foter2 = '𝙲𝚛𝚎𝚊𝚝𝚎𝚍 𝙱𝚢 AY TECH' // BEBAS
 global.foter3 = 'Dark-Love-MD ʙʏ AY TECH' // BEBAS
 global.foter4 = 'Dark-Love-MD 𝚅 𝟷' // BEBAS
 global.idcennel = 'NONE' // BEBAS
-global.thumb = 'https://telegra.ph/file/7d7112d331a345d558149.jpg' // BEBAS
+global.thumb = 'https://files.catbox.moe/alffgj.jpg' // BEBAS
 global.gc = 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'// BEBAS
 
 //—————「 DATABASE 」—————//
