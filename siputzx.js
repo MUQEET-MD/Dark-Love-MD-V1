@@ -245,7 +245,7 @@ switch(command) {
 //=================================================//
 case "menu":{
 await loading()
-const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD*
+const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD-V1*
 
  ╔┈┈⳹『 ɪɴғᴏ ʙᴏᴛ 」
  ╎❒ ɴᴀᴍᴀ ʙᴏᴛ: *${global.namabot}*
@@ -313,9 +313,9 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
  ╎❒ᴄʀᴇᴀᴛᴏʀ: *${global.namaowner}*
  ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⳹
 
- Welcome To Dark-Love-MD Bot. A Simple Whatsapp Bot.
+ Welcome To Dark-Love-MD-V1 Bot. A Simple Whatsapp Bot.
 
-*Dark-Love-MD V1* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One. Enjoy Dark-Love-MD  .
+*Dark-Love-MD V1* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One. Enjoy Dark-Love-MD-V1  .
 
 
 Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
@@ -342,7 +342,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}readvo
 │ ❒ ${prefix}tr
 │ ❒ ${prefix}jarak
-│ ❒ ${prefix}calc ulator
+│ ❒ ${prefix}calculator
 │ ❒ ${prefix}get
 ╰❑
 
