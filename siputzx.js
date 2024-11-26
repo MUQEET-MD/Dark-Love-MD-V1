@@ -408,7 +408,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 ╭─「 *I N F O M E N U* 」
 │ ❒ ${prefix}sc
 │ ❒ ${prefix}tqto
-│ ❒ ${prefix}totalfitur 
+│ ❒ ${prefix}totalfeature 
 │ ❒ ${prefix}runtime
 │ ❒ ${prefix}donate
 │ ❒ ${prefix}tes
@@ -1123,7 +1123,7 @@ return m?.reply(`Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi V
 }
 break
 //=================================================//
-case 'totalfitur':
+case 'totalfeature':
 case 'totalfeature':{
 m.reply(`Total Feature Bot Dark-Love-MD : ${totalFitur()}`)
 }
@@ -1209,7 +1209,7 @@ break
 case "sc": case "script":{
 const tek = `*Hello @${m?.sender.split('@')[0]}*
 
-REPO:-
+REPO:- https://github.com/ayodejibot/Dark-Love-MD-V1/
 
 GITHUB:-https://github.com/ayodejibot/
 
