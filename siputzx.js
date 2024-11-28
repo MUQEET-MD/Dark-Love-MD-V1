@@ -505,33 +505,6 @@ if (stdout) return m?.reply(stdout)
 }
 break
 //=================================================//
-case 'autorecordtyp':
-                if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
-                if (q === 'on') {
-                    autorecordtype = true
-                    replygcxeon(`Successfully changed auto recording and typing to ${q}`)
-                } else if (q === 'off') {
-                    autorecordtype = false
-                    replygcxeon(`Successfully changed auto recording and typing to ${q}`)
-                }
-                break
-  //=================================================//
-                case 'autoswview':
-    case 'autostatusview':{
-             if (!isCreator) return replygcxeon(mess.owner)
-               if (args.length < 1) return replygcxeon('on/off?')
-               if (args[0] === 'on') {
-                  autoswview = true
-                  replygcxeon(`${command} is enabled`)
-               } else if (args[0] === 'off') {
-                  autoswview = false
-                  replygcxeon(`${command} is disabled`)
-               }
-            }
-            break
-  
-//=================================================//
 case "add":{
 if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
