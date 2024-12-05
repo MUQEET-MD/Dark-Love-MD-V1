@@ -347,6 +347,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 ╰❑
 
 ╭─「 *A I M E N U* 」
+│ ❒ ${prefix}txt2img
 │ ❒ ${prefix}ai
 │ ❒ ${prefix}bingimg-2d
 │ ❒ ${prefix}gemini-img
@@ -880,6 +881,30 @@ m.reply(`Error, Jika Itu Adalah Tautan Tiktok Slide, Harap Gunakan Fitur ${prefi
 }
 }
 break;
+//=================================================//
+  
+case "txt2img": {
+  if (!text) return m.reply("Masukan teks!")
+  try {
+    var { data } = await axios({
+      "method": "GET",
+      "url": "https://hercai.onrender.com/v3/text2image",
+      "params": {
+        "prompt": text
+      }
+    })
+    shyzu.sendMessage(m.chat, {
+      image: {
+        url: data.url
+      }
+    }, { quoted: m })
+  } catch (e) {
+    m.reply(e.message)
+    console.log(e)
+  }
+}
+break
+                                           
 //=================================================//
 case "tr":{
 let lang, text
