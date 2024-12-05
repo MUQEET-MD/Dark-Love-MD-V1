@@ -617,7 +617,7 @@ break
 case 'tagall': {
 if (!m?.isGroup && !isAdmins) return
 let teks = `══✪〘 *👥 Tag All* 〙✪══
- ➲ *Pesan : ${q ? q : 'kosong'}*\n\n`
+ ➲ *Message: ${q ? q : 'kosong'}*\n\n`
 for (let mem of participants) {
 teks += `⭔ @${mem?.id.split('@')[0]}\n`
 }
@@ -692,7 +692,7 @@ try {
 break;
 //=================================================//
 case 'pin': case 'pinterest':{
-if (!text) return m?.reply(`Contoh: ${prefix + command} Adel JKT48`)
+if (!text) return m?.reply(`Example: ${prefix + command} Adel JKT48`)
 let res = await pinterest(text)
 ptz.sendMessage(m?.chat,{image: {url:getRandom(res)}, caption: "Nih Bwang"},{quoted:m})
 }
