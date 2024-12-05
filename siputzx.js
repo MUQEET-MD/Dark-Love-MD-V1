@@ -884,7 +884,7 @@ break;
 //=================================================//
   
 case "txt2img": {
-  if (!text) return m.reply("Masukan teks!")
+  if (!text) return m.reply("Enter text!")
   try {
     var { data } = await axios({
       "method": "GET",
