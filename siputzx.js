@@ -359,17 +359,22 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 ╰❑
 
 ╭─「 *D O W N L O D M E N U* 」
+│ ❒ ${prefix}spotify
+│ ❒ ${prefix}play-spo
+│ ❒ ${prefix}spotifydl
 │ ❒ ${prefix}tiktok
 │ ❒ ${prefix}instagram
 │ ❒ ${prefix}facebook
 │ ❒ ${prefix}ttslide
 │ ❒ ${prefix}lahelu
+│ ❒ ${prefix}ytmp3
 │ ❒ ${prefix}play
+│ ❒ ${prefix}ytmp4
 ╰❑
 
 ╭─「 *S E A R C H M E N U* 」
 │ ❒ ${prefix}pinterest
-│ ❒ ${prefix}tiktoks
+│ ❒ ${prefix}tiktok
 │ ❒ ${prefix}stickers
 │ ❒ ${prefix}meme
 ╰❑
@@ -807,6 +812,52 @@ let hasil = await ocrapi.ocrSpace(url)
 }
 break
 //=================================================//
+case prefix + 'spotify':
+ if (!text) return m.reply('mau cari lagu apa?');
+ try {
+ let spo = await (await fetch('https://endpoint.web.id/search/spotify?key=' + global.key + '&query=' + text)).json();
+ 
+ if (spo.status) {
+ let results = spo.result;
+ let responseMessage = results.map(track => {
+ return *Title:* ${track.name}\n*Artist(s):* ${track.artists}\n*Popularity:* ${track.popularity}\n*Link:* ${track.link}\n*Duration:* ${Math.floor(track.duration_ms / 60000)}:${((track.duration_ms % 60000) / 1000).toFixed(0).padStart(2, '0')}\n*Image:* ${track.image}\n\n;
+ }).join('');
+
+ m.reply(responseMessage);
+ } else {
+ m.reply('No results found.');
+ }
+ } catch (e) {
+ m.reply('shannz rest api sedang erorr');
+ }
+ break
+//=================================================//
+case prefix + 'spotifydl':
+ if (!text) return m.reply('masukkan url music nya!')
+ try { 
+ m.reply('Process sending audio, please wait...')
+ let sdl = await (await fetch('https://endpoint.web.id/downloader/spotify?key=' + global.key + '&url=' + text)).json()
+ let shannz = sdl.result;
+ await Shannz.sendMessage(m.chat, { 
+ audio: { 
+ url: shannz.download
+ }, 
+ mimetype: 'audio/mp4', contextInfo: {
+ externalAdReply: {
+ title: shannz.title,
+ body: Author : ${shannz.artis},
+ thumbnailUrl: shannz.image,
+ mediaType: 1,
+ showAdAttribution: false,
+ renderLargerThumbnail: true,
+ },
+ }, 
+ }, { quoted: m });
+} catch (e) {
+ m.reply('shannz rest api sedang erorr');
+}
+break
+//=================================================//
 case "instagram":
 case "ig":{
 m.reply('*Wait Prosees Kak*')  
@@ -856,16 +907,41 @@ await m?.reply('No images found after filtering.');
 }}
 break;
 //=================================================//
-case 'tiktoks':
-case 'ttsearch': {
-if (args.length == 0) return m?.reply(`Contoh: ${prefix + command} Member JKT48 Grad`)
-await loading()
-let res = await nganuin(`https://www.putz.my.id/api/download?type=tiktoks&q=${args[0]}`)
-ptz.sendMessage(m?.chat, { video: { url: res.result.no_watermark }, caption: res.result.title, fileName: `tiktok.mp4`, mimetype: 'video/mp4' }).then(() => {
-ptz.sendMessage(m?.chat, { audio: { url: res.result.music }, fileName: `tiktok.mp3`, mimetype: 'audio/mp4' })
-})
+case prefix  + 'ytmp4': {
+ if (!text) return m.reply('contoh: .ytmp4 url|quality\nAvailable Quality: 360p, 480p, 720p, 1080p')
+try {
+ let url = text.split("|")[0];
+ let quality = text.split("|")[1];
+ if (!quality) return m.reply('contoh: .ytmp4 url|quality\nAvailable Quality: 360p, 480p, 720p, 1080p');
+ m.reply('Process sending video, mungkin membutuhkan 1-3 menit jika durasi video panjang!')
+ let proces = await (await fetch(https://endpoint.web.id/downloader/yt-video?key=${global.key}&url=${url}&quality=${quality})).json()
+ let video4 = proces.result; 
+ Shannz.sendMessage(m.chat,{video:{url: video4.download }, caption: video4.title},{quoted: m})
+} catch (e) {
+ m.reply('terjadi error');
 }
-break;
+}
+break
+//=================================================//
+case "tiktok": case "tt": {
+if (!text.includes("tiktok.com")) return m.reply("Masukan link tiktok!")
+try {
+  let { data } = await axios({
+    "method": "GET",
+    "url": "https://mannoffc-x.hf.space/download/tiktok",
+    "params": {
+      "url": text
+    }
+  })
+  let { author, title, duration, medias } = data.result;
+  let { url } = medias[0]
+  let caption = *T I K T O K  D O W N L O A D E R*\n• Author: ${author}\n• Title: ${title}\n• Duration: ${duration}s
+  shyzu.sendMessage(m.chat, { video: { url }, caption }, { quoted: m })
+} catch ({ message }) {
+  m.reply(message)
+}
+}
+break
 //=================================================//
 case 'tiktok':
 case 'tt': {
@@ -882,7 +958,34 @@ m.reply(`Error, Jika Itu Adalah Tautan Tiktok Slide, Harap Gunakan Fitur ${prefi
 }
 break;
 //=================================================//
-  
+case prefix + ['ytmp3']: {
+ if (!text) return m.reply(*PERMINTAAN ERROR!! CONTOH :*\n> *.ytmp3 url*)
+ 
+ try {
+ let load = await (await fetch(https://endpoint.web.id/downloader/yt-audio?key=${global.key}&url=${text})).json();
+ let shannz = load.result
+ 
+ await Shannz.sendMessage(m.chat, { 
+ audio: { 
+ url: shannz.download
+ }, 
+ mimetype: 'audio/mp4', contextInfo: {
+ externalAdReply: {
+ title: shannz.title,
+ body: Type : Mp3 (128kbps),
+ thumbnailUrl: shannz.image,
+ mediaType: 1,
+ showAdAttribution: false,
+ renderLargerThumbnail: true,
+ },
+ }, 
+ }, { quoted: m });
+ } catch (error) {
+ m.reply(shannz api sedang error, segera repot ke owner!);
+ }
+}
+break
+//=================================================//
 case "txt2img": {
   if (!text) return m.reply("Enter text!")
   try {
@@ -1063,6 +1166,39 @@ m?.reply(txt.slice(0, 65536) + '')
 }
 }
 break
+//=================================================//
+case prefix + 'play-spo':
+ if (!text) return m.reply('mau cari lagu apa?');
+ try {
+ let spo = await (await fetch('https://endpoint.web.id/search/spotify?key=' + global.key + '&query=' + text)).json();
+ if (spo.status && spo.result.length > 0) {
+ let randomIndex = Math.floor(Math.random() * spo.result.length);
+ let track = spo.result[randomIndex];
+ let dls = await (await fetch('https://endpoint.web.id/downloader/spotify?key=' + global.key + '&url=' + track.link)).json();
+ let shannz = dls.result;
+ 
+ await Shannz.sendMessage(m.chat, { 
+ audio: { 
+ url: shannz.download
+ }, 
+ mimetype: 'audio/mp4', contextInfo: {
+ externalAdReply: {
+ title: shannz.title,
+ body: Author : ${shannz.artis},
+ thumbnailUrl: shannz.image,
+ mediaType: 1,
+ showAdAttribution: false,
+ renderLargerThumbnail: true,
+ },
+ }, 
+ }, { quoted: m });
+ } else {
+ m.reply('No results found.');
+ }
+ } catch (e) {
+ m.reply('shannz rest api sedang erorr');
+ }
+ break
 //=================================================//
 case 'readvo': case 'readviewonce': case 'rvo': {
 if (!m?.quoted) return m?.reply('m?.reply gambar/video yang ingin Anda lihat')
