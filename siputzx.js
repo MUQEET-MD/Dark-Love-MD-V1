@@ -359,7 +359,6 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 ╰❑
 
 ╭─「 *D O W N L O D M E N U* 」
-│ ❒ ${prefix}spotify
 │ ❒ ${prefix}play-spo
 │ ❒ ${prefix}spotifydl
 │ ❒ ${prefix}tiktok
