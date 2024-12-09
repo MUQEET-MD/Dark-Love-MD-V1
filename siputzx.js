@@ -812,26 +812,6 @@ let hasil = await ocrapi.ocrSpace(url)
 }
 break
 //=================================================//
-case prefix + 'spotify':
- if (!text) return m.reply('mau cari lagu apa?');
- try {
- let spo = await (await fetch('https://endpoint.web.id/search/spotify?key=' + global.key + '&query=' + text)).json();
- 
- if (spo.status) {
- let results = spo.result;
- let responseMessage = results.map(track => {
- return *Title:* ${track.name}\n*Artist(s):* ${track.artists}\n*Popularity:* ${track.popularity}\n*Link:* ${track.link}\n*Duration:* ${Math.floor(track.duration_ms / 60000)}:${((track.duration_ms % 60000) / 1000).toFixed(0).padStart(2, '0')}\n*Image:* ${track.image}\n\n;
- }).join('');
-
- m.reply(responseMessage);
- } else {
- m.reply('No results found.');
- }
- } catch (e) {
- m.reply('shannz rest api sedang erorr');
- }
- break
-//=================================================//
 case prefix + 'spotifydl':
  if (!text) return m.reply('masukkan url music nya!')
  try { 
@@ -1338,6 +1318,8 @@ const tek = `─┉┈◈ * BIG THANKS TO  *◈┈┉
  
 ╭── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ──╮
 » Developer (AY TECH) 
+» Developer (Sanzz)
+
 
 ╰── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ──╯
 
