@@ -359,22 +359,19 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 ╰❑
 
 ╭─「 *D O W N L O D M E N U* 」
-│ ❒ ${prefix}play-spo
 │ ❒ ${prefix}tiktok
 │ ❒ ${prefix}instagram
 │ ❒ ${prefix}facebook
 │ ❒ ${prefix}ttslide
 │ ❒ ${prefix}lahelu
-│ ❒ ${prefix}ytmp3
 │ ❒ ${prefix}play
 ╰❑
 
 ╭─「 *S E A R C H M E N U* 」
 │ ❒ ${prefix}pinterest
-│ ❒ ${prefix}tiktok
+│ ❒ ${prefix}tiktoks
 │ ❒ ${prefix}stickers
 │ ❒ ${prefix}meme
-│ ❒ ${prefix}ocr
 ╰❑
 
 ╭─「 *V O I C E M E N U* 」
@@ -620,7 +617,7 @@ break
 case 'tagall': {
 if (!m?.isGroup && !isAdmins) return
 let teks = `══✪〘 *👥 Tag All* 〙✪══
- ➲ *Message: ${q ? q : 'kosong'}*\n\n`
+ ➲ *Message : ${q ? q : 'kosong'}*\n\n`
 for (let mem of participants) {
 teks += `⭔ @${mem?.id.split('@')[0]}\n`
 }
@@ -674,28 +671,28 @@ m?.reply("URL Yang Diberikan Tidak Mendukung Video Atau Gambar.")
 }}
 break;
 //=================================================//
-case "ai": {
-if (!text) return m.reply("Masukan text!")
-let prompt = "Nama kamu adalah Shyzu" // Isi prompt AI kamu disini
-try {
-  let { data } = await axios({
-    "method": "GET",
-    "url": "https://mannoffc-x.hf.space/ai/prompt",
-    "params": {
-      "prompt": prompt,
-      "message": text
+    case "ai": {
+    if (!text) return m.reply("Masukan text!")
+    let prompt = "Nama kamu adalah Shyzu" // Isi prompt AI kamu disini
+    try {
+      let { data } = await axios({
+        "method": "GET",
+        "url": "https://mannoffc-x.hf.space/ai/logic",
+        "params": {
+          "q": text,
+          "logic": prompt
+        }
+      })
+      m.reply(data.result);
+    } catch (e) {
+      m.reply(e.message);
+      console.log(e);
     }
-  })
-  m.reply(data.result);
-} catch (e) {
-  m.reply(e.message);
-  console.log(e);
-}
-}
-break;
+    }
+    break;
 //=================================================//
 case 'pin': case 'pinterest':{
-if (!text) return m?.reply(`Example: ${prefix + command} Adel JKT48`)
+if (!text) return m?.reply(`Contoh: ${prefix + command} Adel JKT48`)
 let res = await pinterest(text)
 ptz.sendMessage(m?.chat,{image: {url:getRandom(res)}, caption: "Nih Bwang"},{quoted:m})
 }
@@ -859,25 +856,16 @@ await m?.reply('No images found after filtering.');
 }}
 break;
 //=================================================//
-case "tiktok": case "tt": {
-if (!text.includes("tiktok.com")) return m.reply("Masukan link tiktok!")
-try {
-  let { data } = await axios({
-    "method": "GET",
-    "url": "https://mannoffc-x.hf.space/download/tiktok",
-    "params": {
-      "url": text
-    }
-  })
-  let { author, title, duration, medias } = data.result;
-  let { url } = medias[0]
-  let caption = *T I K T O K  D O W N L O A D E R*\n• Author: ${author}\n• Title: ${title}\n• Duration: ${duration}s
-  shyzu.sendMessage(m.chat, { video: { url }, caption }, { quoted: m })
-} catch ({ message }) {
-  m.reply(message)
+case 'tiktoks':
+case 'ttsearch': {
+if (args.length == 0) return m?.reply(`Contoh: ${prefix + command} Member JKT48 Grad`)
+await loading()
+let res = await nganuin(`https://www.putz.my.id/api/download?type=tiktoks&q=${args[0]}`)
+ptz.sendMessage(m?.chat, { video: { url: res.result.no_watermark }, caption: res.result.title, fileName: `tiktok.mp4`, mimetype: 'video/mp4' }).then(() => {
+ptz.sendMessage(m?.chat, { audio: { url: res.result.music }, fileName: `tiktok.mp3`, mimetype: 'audio/mp4' })
+})
 }
-}
-break
+break;
 //=================================================//
 case 'tiktok':
 case 'tt': {
@@ -894,36 +882,9 @@ m.reply(`Error, Jika Itu Adalah Tautan Tiktok Slide, Harap Gunakan Fitur ${prefi
 }
 break;
 //=================================================//
-case prefix + ['ytmp3']: {
- if (!text) return m.reply(*PERMINTAAN ERROR!! CONTOH :*\n> *.ytmp3 url*)
- 
- try {
- let load = await (await fetch(https://endpoint.web.id/downloader/yt-audio?key=${global.key}&url=${text})).json();
- let shannz = load.result
- 
- await Shannz.sendMessage(m.chat, { 
- audio: { 
- url: shannz.download
- }, 
- mimetype: 'audio/mp4', contextInfo: {
- externalAdReply: {
- title: shannz.title,
- body: Type : Mp3 (128kbps),
- thumbnailUrl: shannz.image,
- mediaType: 1,
- showAdAttribution: false,
- renderLargerThumbnail: true,
- },
- }, 
- }, { quoted: m });
- } catch (error) {
- m.reply(shannz api sedang error, segera repot ke owner!);
- }
-}
-break
-//=================================================//
+  
 case "txt2img": {
-  if (!text) return m.reply("Enter text!")
+  if (!text) return m.reply("Masukan teks!")
   try {
     var { data } = await axios({
       "method": "GET",
@@ -1103,39 +1064,6 @@ m?.reply(txt.slice(0, 65536) + '')
 }
 break
 //=================================================//
-case prefix + 'play-spo':
- if (!text) return m.reply('mau cari lagu apa?');
- try {
- let spo = await (await fetch('https://endpoint.web.id/search/spotify?key=' + global.key + '&query=' + text)).json();
- if (spo.status && spo.result.length > 0) {
- let randomIndex = Math.floor(Math.random() * spo.result.length);
- let track = spo.result[randomIndex];
- let dls = await (await fetch('https://endpoint.web.id/downloader/spotify?key=' + global.key + '&url=' + track.link)).json();
- let shannz = dls.result;
- 
- await Shannz.sendMessage(m.chat, { 
- audio: { 
- url: shannz.download
- }, 
- mimetype: 'audio/mp4', contextInfo: {
- externalAdReply: {
- title: shannz.title,
- body: Author : ${shannz.artis},
- thumbnailUrl: shannz.image,
- mediaType: 1,
- showAdAttribution: false,
- renderLargerThumbnail: true,
- },
- }, 
- }, { quoted: m });
- } else {
- m.reply('No results found.');
- }
- } catch (e) {
- m.reply('shannz rest api sedang erorr');
- }
- break
-//=================================================//
 case 'readvo': case 'readviewonce': case 'rvo': {
 if (!m?.quoted) return m?.reply('m?.reply gambar/video yang ingin Anda lihat')
 if (m?.quoted.mtype !== 'viewOnceMessageV2') return m?.reply('Ini bukan pesan view-once.')
@@ -1273,9 +1201,8 @@ case "tqto":{
 const tek = `─┉┈◈ * BIG THANKS TO  *◈┈┉
  
 ╭── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ──╮
-» Developer (AY TECH) 
+» Developer (AY TECH)
 » Developer (Sanzz)
-
 
 ╰── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ──╯
 
