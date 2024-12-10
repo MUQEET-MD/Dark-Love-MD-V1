@@ -367,7 +367,6 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}lahelu
 │ ❒ ${prefix}ytmp3
 │ ❒ ${prefix}play
-│ ❒ ${prefix}ytmp4
 ╰❑
 
 ╭─「 *S E A R C H M E N U* 」
@@ -375,6 +374,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}tiktok
 │ ❒ ${prefix}stickers
 │ ❒ ${prefix}meme
+│ ❒ ${prefix}ocr
 ╰❑
 
 ╭─「 *V O I C E M E N U* 」
@@ -858,22 +858,6 @@ await ptz.sendMessage(m.chat, { image: { url: urls[i] }, caption: `(${i + 1}/${t
 await m?.reply('No images found after filtering.');
 }}
 break;
-//=================================================//
-case prefix  + 'ytmp4': {
- if (!text) return m.reply('contoh: .ytmp4 url|quality\nAvailable Quality: 360p, 480p, 720p, 1080p')
-try {
- let url = text.split("|")[0];
- let quality = text.split("|")[1];
- if (!quality) return m.reply('contoh: .ytmp4 url|quality\nAvailable Quality: 360p, 480p, 720p, 1080p');
- m.reply('Process sending video, mungkin membutuhkan 1-3 menit jika durasi video panjang!')
- let proces = await (await fetch(https://endpoint.web.id/downloader/yt-video?key=${global.key}&url=${url}&quality=${quality})).json()
- let video4 = proces.result; 
- Shannz.sendMessage(m.chat,{video:{url: video4.download }, caption: video4.title},{quoted: m})
-} catch (e) {
- m.reply('terjadi error');
-}
-}
-break
 //=================================================//
 case "tiktok": case "tt": {
 if (!text.includes("tiktok.com")) return m.reply("Masukan link tiktok!")
