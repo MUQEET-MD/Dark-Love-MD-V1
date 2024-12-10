@@ -360,7 +360,6 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 
 ╭─「 *D O W N L O D M E N U* 」
 │ ❒ ${prefix}play-spo
-│ ❒ ${prefix}spotifydl
 │ ❒ ${prefix}tiktok
 │ ❒ ${prefix}instagram
 │ ❒ ${prefix}facebook
@@ -808,32 +807,6 @@ let img = await ptz.downloadAndSaveMediaMessage(q)
 let url = await TelegraPH(img)
 let hasil = await ocrapi.ocrSpace(url)
  await m?.reply(hasil.ParsedResults[0].ParsedText)
-}
-break
-//=================================================//
-case prefix + 'spotifydl':
- if (!text) return m.reply('masukkan url music nya!')
- try { 
- m.reply('Process sending audio, please wait...')
- let sdl = await (await fetch('https://endpoint.web.id/downloader/spotify?key=' + global.key + '&url=' + text)).json()
- let shannz = sdl.result;
- await Shannz.sendMessage(m.chat, { 
- audio: { 
- url: shannz.download
- }, 
- mimetype: 'audio/mp4', contextInfo: {
- externalAdReply: {
- title: shannz.title,
- body: Author : ${shannz.artis},
- thumbnailUrl: shannz.image,
- mediaType: 1,
- showAdAttribution: false,
- renderLargerThumbnail: true,
- },
- }, 
- }, { quoted: m });
-} catch (e) {
- m.reply('shannz rest api sedang erorr');
 }
 break
 //=================================================//
