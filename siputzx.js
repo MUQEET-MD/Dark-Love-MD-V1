@@ -1,4 +1,4 @@
-/*
+/*      
  *Base By Siputzx
  *Pengembang PakoyOffC
  *YT : PakoyOffC / CubluxStore
@@ -245,7 +245,7 @@ switch(command) {
 //=================================================//
 case "menu":{
 await loading()
-const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD-V1*
+        const tek = `𝗛𝗲𝗹𝗹𝗼 👋 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD-V1 ❤️🌹☠️* Made By AY TECH
 
  ╔┈┈⳹『 ɪɴғᴏ ʙᴏᴛ 」
  ╎❒ ɴᴀᴍᴀ ʙᴏᴛ: *${global.namabot}*
@@ -259,11 +259,13 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
 ┃ *𝙹𝙺𝚃𝟺𝟾𝙼𝙴𝙽𝚄*
 ┗━━━━━━━━❍
 
-Hello World
+Hello World 👋
 
-*_Dark-Love-MD Is A Simple Bot Made By AY TECH_*.
+*_Dark-Love-MD ❤️🌹 Is A Simple Bot Made By AY TECH_*.
 
 To Check All Bot Commands Type Your Prefix and allmenu
+ 
+ Enjoy Dark-Love-MD-V1 ❤😍😉😌🌹
 `
 ptz.sendMessage(m?.chat, {
     document: fs.readFileSync("./package.json"),
@@ -292,7 +294,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD V1',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -305,7 +307,7 @@ break
 //=================================================//
 case "allmenu":{
 await adel()
-const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD V1 Bot.*
+const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome To Dark-Love-MD V1 Bot🤟👊.*
 
  ╔┈┈⳹『 ɪɴғᴏ ʙᴏᴛ 」
  ╎❒ NAME BOT: *${global.namabot}*
@@ -313,12 +315,12 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
  ╎❒ᴄʀᴇᴀᴛᴏʀ: *${global.namaowner}*
  ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⳹
 
- Welcome To Dark-Love-MD-V1 Bot. A Simple Whatsapp Bot.
+ Welcome To Dark-Love-MD-V1 Bot🤓🫴. A Simple Whatsapp Bot.
 
-*Dark-Love-MD V1* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One. Enjoy Dark-Love-MD-V1  .
+*Dark-Love-MD V1* This Is The Best Bot Ever Made By AY TECH. Don't Forget We Are Dark-Lovers Because We Love No One 😌. Enjoy Dark-Love-MD-V1 😍😉😌  .
 
 
-Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
+Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features 😎🤩🙂‍↕️
 
 ╭─「 *O W N E R M E N U* 」
 │ ❒ ${prefix}bot
@@ -415,6 +417,12 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}tes
 │ ❒ ${prefix}sewa
 ╰❑
+ 
+ 
+╭─「 *☠️ _BAN_* 」
+│ ☠️ ${prefix}ban
+│ ☠️ ${prefix}sewa
+╰❑
 
 ╭─「 *S T O R E M E N U* 」
 │ ❒ ${prefix}panel
@@ -456,7 +464,7 @@ Type (.ᴀʟʟᴍᴇɴᴜ) To Check All Bot Features
 │ ❒ ${prefix}
 ╰❑
 
-*_𝙼𝚊𝚍𝚎 𝚆𝚒𝚝𝚑 Dark-Love-MD_*
+*_𝙼𝚊𝚍𝚎 𝚆𝚒𝚝𝚑 Dark-Love-MD-V1_*
 
 
 `
@@ -487,7 +495,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -794,22 +802,9 @@ m?.reply(data.text)
 }
 break
 //=================================================//
-case "ocr":{
-let q = m?.quoted ? m?.quoted : m
-let mime = (q.msg || q).mimetype || ''
-if (!mime) return m?.reply(`Balas Gambar Dengan Perintah .ocr`)
-if (!/image\/(jpe?g|png)/.test(mime)) return m?.reply(`_*jenis ${mime} Tidak Didukung!*_`)
-const ocrapi = require("ocr-space-api-wrapper")
-let img = await ptz.downloadAndSaveMediaMessage(q)
-let url = await TelegraPH(img)
-let hasil = await ocrapi.ocrSpace(url)
- await m?.reply(hasil.ParsedResults[0].ParsedText)
-}
-break
-//=================================================//
 case "instagram":
 case "ig":{
-m.reply('*Wait Prosees Kak*')  
+m.reply('*Wait Process Kak*')  
 if (!text) return m.reply("Mana URL-Nya?");
 if (m.isGroup) return m.reply(`Karena Fitur Ini Bisa Menyebabkan Spam Maka Fitur ${command} Tidak Bisa Bi Gunakan Di Group`)
 const regex = /^(?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:p|tv|reel)\/([^\/?#&]+)/i;
@@ -829,7 +824,7 @@ await m.reply('URL Yang Diberikan Bukan URL Instagram.');
 }}
 break;
 //=================================================//
-case "fasebook":
+case "facebook":
 case "fb":{
 if (!text) return m.reply("Mana URL-Nya?");
 const facebookRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com\/)/;
@@ -1090,7 +1085,7 @@ if (args.length >= 1) {
 text = args.slice(0).join(" ")
 } else if (m?.quoted && m?.quoted.text) {
 text = m?.quoted.text
-} else m?.reply("Input teks atau m?.reply teks yang ingin di jadikan quote!")
+} else m?.reply("Input text m?.reply teks yang ingin di jadikan quote!")
 if (!text) return m?.reply('masukan text')
 if (text.length > 30) return m?.reply('Maksimal 30 Teks!')
 await loading()
@@ -1163,7 +1158,7 @@ break
 //=================================================//
 case 'totalfeature':
 case 'totalfeature':{
-m.reply(`Total Feature Bot Dark-Love-MD : ${totalFitur()}`)
+m.reply(`Total Feature Bot Dark-Love-MD-V1 : ${totalFitur()}`)
 }
 break
 //=================================================//
@@ -1234,7 +1229,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1283,7 +1278,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1303,7 +1298,7 @@ const tek = `*Hello @${m?.sender.split('@')[0]} Kalian Bisa Donate Aku  Lewat�
 
 *_We Really Appreciate As You Donate. Any Amount Is Appreciated By Us _*
 
-╭─「 *Dark-Love-MD* 」
+╭─「 *Dark-Love-MD-V1* 」
 │ » *Whatsapp-Channel  : https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37*
 │ » *TIKTOK : none*
 │ » *IG : none*
@@ -1336,7 +1331,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1377,7 +1372,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1494,7 +1489,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD',
+            newsletterJid: 'Dark-Love-MD-V1'{{,
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1592,7 +1587,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1622,7 +1617,7 @@ ptz.sendMessage(m?.chat, {
         externalAdReply: {
             containsAutoReply: true,
             mediaType: 1,
-            mediaUrl: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb',
+            mediaUrl: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37',
             renderLargerThumbnail: true,
             showAdAttribution: true,
             sourceUrl: global.gc,
@@ -1634,10 +1629,10 @@ ptz.sendMessage(m?.chat, {
         isForwarded: true,
         mentionedJid: [m?.sender],
         businessMessageForwardInfo: {
-            businessOwnerJid: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb'
+            businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1701,7 +1696,7 @@ ptz.sendMessage(m?.chat, {
         externalAdReply: {
             containsAutoReply: true,
             mediaType: 1,
-            mediaUrl: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb',
+            mediaUrl: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37',
             renderLargerThumbnail: true,
             showAdAttribution: true,
             sourceUrl: global.gc,
@@ -1713,10 +1708,10 @@ ptz.sendMessage(m?.chat, {
         isForwarded: true,
         mentionedJid: [m?.sender],
         businessMessageForwardInfo: {
-            businessOwnerJid: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb'
+            businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1740,8 +1735,8 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Saya Adel
 ┗━━━━━━━━❍
 
 𝙱𝙰𝙶𝙰𝙸 𝙺𝚄𝙲𝙸𝙽𝙶 𝚈𝙰𝙽𝙶 𝙺𝙰𝙻𝙴𝙼 𝚃𝙰𝙿𝙸 𝙰𝙺𝙰𝙽 𝚂𝙴𝙻𝙰𝙻𝚄 𝙼𝙸𝙺𝙰𝚃 𝙷𝙰𝚃𝙸 𝙺𝙰𝙼𝚄, 𝙷𝙰𝙻𝙾 𝚂𝙴𝙼𝚄𝙰𝙽𝚈𝙰 𝙰𝙺𝚄 𝙰𝙳𝙴𝙻
-
-*ᴀᴅᴇʟʙᴏᴛᴢ* ᴀᴅᴀʟᴀʜ ʙᴏᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ʏᴀɴɢ ᴅᴀᴘᴀᴛ ᴍᴇᴍᴇɴᴜʜɪ ᴋᴇʙᴜᴛᴜʜᴀɴ ᴅɪɢɪᴛᴀʟ ᴀɴᴅᴀ. ᴀᴘᴀᴋᴀʜ ᴋᴀᴍᴜ ᴍᴇʀᴀꜱᴀ ʟᴇʟᴀʜ? *ᴀᴅᴇʟʙᴏᴛᴢ* ꜱᴇʟᴀʟᴜ ᴅɪ ꜱɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ʜᴀʀɪ ᴀɴᴅᴀ ʟᴇʙɪʜ ᴍᴜᴅᴀʜ. ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ᴅᴀꜰᴛᴀʀᴋᴀɴ ᴅɪʀɪ ᴀɴᴅᴀ ᴅɪ *ᴀᴅᴇʟʙᴏᴛᴢ* ᴀᴅᴇʟʙᴏᴛᴢ ᴀɢᴀʀ ᴀᴅᴇʟʙᴏᴛᴢ ᴅᴀᴘᴀᴛ ᴍᴇɴɢɪɴɢᴀᴛ ᴀɴᴅᴀ ꜱᴇʟᴀᴍᴀ ᴀᴅᴇʟʙᴏᴛᴢ ᴍᴀꜱɪʜ ᴀᴋᴛɪꜰ.
+ 
+ *Dark-Love-MD-V1* ᴀᴅᴀʟᴀʜ ʙᴏᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ʏᴀɴɢ ᴅᴀᴘᴀᴛ ᴍᴇᴍᴇɴᴜʜɪ ᴋᴇʙᴜᴛᴜʜᴀɴ ᴅɪɢɪᴛᴀʟ ᴀɴᴅᴀ. ᴀᴘᴀᴋᴀʜ ᴋᴀᴍᴜ ᴍᴇʀᴀꜱᴀ ʟᴇʟᴀʜ? *ᴀᴅᴇʟʙᴏᴛᴢ* ꜱᴇʟᴀʟᴜ ᴅɪ ꜱɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ʜᴀʀɪ ᴀɴᴅᴀ ʟᴇʙɪʜ ᴍᴜᴅᴀʜ. ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ᴅᴀꜰᴛᴀʀᴋᴀɴ ᴅɪʀɪ ᴀɴᴅᴀ ᴅɪ *ᴀᴅᴇʟʙᴏᴛᴢ* ᴀᴅᴇʟʙᴏᴛᴢ ᴀɢᴀʀ ᴀᴅᴇʟʙᴏᴛᴢ ᴅᴀᴘᴀᴛ ᴍᴇɴɢɪɴɢᴀᴛ ᴀɴᴅᴀ ꜱᴇʟᴀᴍᴀ ᴀᴅᴇʟʙᴏᴛᴢ ᴍᴀꜱɪʜ ᴀᴋᴛɪꜰ.
 
 ᴋᴇᴛɪᴋ (.ᴀʟʟᴍᴇɴᴜ) ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ꜱᴇᴍᴜᴀꜰɪᴛᴜʀ, ᴊɪᴋᴀ ᴀᴅᴀ ꜰɪᴛᴜʀ ʏᴀɴɢ ᴇʀᴏʀ ꜱɪʟᴀᴋᴀɴ ʙᴇʀɪᴛᴀʜᴜ ᴋᴇ ᴏᴡɴᴇʀ ᴀᴅᴇʟʙᴏᴛᴢ
 
@@ -1774,7 +1769,7 @@ ptz.sendMessage(m?.chat, {
         externalAdReply: {
             containsAutoReply: true,
             mediaType: 1,
-            mediaUrl: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb',
+            mediaUrl: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37',
             renderLargerThumbnail: true,
             showAdAttribution: true,
             sourceUrl: global.gc,
@@ -1786,10 +1781,10 @@ ptz.sendMessage(m?.chat, {
         isForwarded: true,
         mentionedJid: [m?.sender],
         businessMessageForwardInfo: {
-            businessOwnerJid: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb'
+            businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -1832,7 +1827,7 @@ ptz.sendMessage(m?.chat, {
         externalAdReply: {
             containsAutoReply: true,
             mediaType: 1,
-            mediaUrl: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb',
+            mediaUrl: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37',
             renderLargerThumbnail: true,
             showAdAttribution: true,
             sourceUrl: global.gc,
@@ -1844,10 +1839,10 @@ ptz.sendMessage(m?.chat, {
         isForwarded: true,
         mentionedJid: [m?.sender],
         businessMessageForwardInfo: {
-            businessOwnerJid: 'https://chat.whatsapp.com/IbkyXBBe0duK96zOSfSflb'
+            businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -2264,7 +2259,7 @@ showAdAttribution: true
 }
 break
 case 'tes': case 'koy': case 'pakoy': case 'bot':{
-m.reply('Dark-Love-MD Kak >//<')
+m.reply('Dark-Love-MD-V1 Kak >//<')
 }
 break
 
@@ -2323,9 +2318,9 @@ businessMessageForwardInfo: {
 businessOwnerJid: botNumber 
 },
 forwardedNewsletterMessageInfo: {
-newsletterJid: 'PakoyOffC@newsletter',
+newsletterJid: 'Dark-Love-MD-V1',
 serverMessageId: null,
-newsletterName: "PakoyOffC"
+newsletterName: "global.foter3"
 }
 }
 }, { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: "0@s.whatsapp.net" }, message: { conversation: "_PakoyOffC Production Terverifikasi WhatsApp_"}}})
@@ -2333,7 +2328,7 @@ user.pc = new Date() * 1;
 }
 }
 } catch (err) {
-ptz.sendMessage('6282129231578@s.whatsapp.net', { text: util.format(err) })
+ptz.sendMessage('+2348122441244@s.whatsapp.net', { text: util.format(err) })
 }
 }
 let file = require.resolve(__filename)
