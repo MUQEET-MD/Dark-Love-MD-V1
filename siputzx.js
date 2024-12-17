@@ -2334,7 +2334,7 @@ businessMessageForwardInfo: {
 businessOwnerJid: botNumber 
 },
 forwardedNewsletterMessageInfo: {
-newsletterJid: 'Dark-Love-MD-V1',
+newsletterJid: 'PakoyOffC@newsletter',
 serverMessageId: null,
 newsletterName: "PakoyOffC"
 }
