@@ -1509,7 +1509,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'Dark-Love-MD-V1'{{,
+            newsletterJid: 'PakoyOffC@newsletter'{{,
             serverMessageId: null,
             newsletterName: global.foter3
         }
