@@ -26,13 +26,13 @@ const { color } = require('./lib/myfunc')
 //—————「 Set Owner 」—————//
 global.owner = '2348122441244' // UBAH AJA NO OWNER
 global.nomerowner = ["2348122441244"] // UBAH AJA NO OWNER
-global.namabot = 'Dark-Love-MD' // UBAH AJA NAMA BOT LU
+global.namabot = 'Dark-Love-MD-V1' // UBAH AJA NAMA BOT LU
 global.namaowner = 'AY TECH' // UBAH AJA NAMA OWNER
 
 //—————「 Set Watermak 」—————//
 global.packname ='𝙼𝚊𝚍𝚎 𝚆𝚒𝚝𝚑 Dark-Love-MD-V1' //NAMA STICKER
-global.author = '🇵 🇦 🇰 🇴 🇾 🇰 🇪 🇨 🇪' // UBAH AUA NAMA LU
-global.foter1 = '𝚂𝚒𝚖𝚙𝚕𝚎 𝙱𝚘𝚝 𝙱𝚢 Dark-Love-MD-V1' // BEBAS
+global.author = 'Dark-Love-MD-V1'// UBAH AUA NAMA LU
+global.foter1 = '𝚂impl𝚎 𝙱𝚘𝚝 𝙱𝚢 Dark-Love-MD-V1' // BEBAS
 global.foter2 = '𝙲𝚛𝚎𝚊𝚝𝚎𝚍 𝙱𝚢 AY TECH' // BEBAS
 global.foter3 = 'Dark-Love-MD-V1 ʙʏ AY TECH' // BEBAS
 global.foter4 = 'Dark-Love-MD 𝚅 𝟷' // BEBAS
