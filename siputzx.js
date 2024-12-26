@@ -515,7 +515,7 @@ ptz.sendMessage(m?.chat, {
             businessOwnerJid: 'https://whatsapp.com/channel/0029VaiBr1WDzgTAYG2f6V37'
         },
         forwardedNewsletterMessageInfo: {
-            newsletterJid: 'PakoyOffC@newsletter',
+            newsletterJid: 'Dark-Love-MD-V1',
             serverMessageId: null,
             newsletterName: global.foter3
         }
@@ -579,9 +579,9 @@ if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (args[0] === 'close'){
-await ptz.groupSettingUpdate(m.chat, 'announcement').then((res) => m?.reply(`Sukses Menutup Group`)).catch((err) => m?.reply(jsonformat(err)))
+await ptz.groupSettingUpdate(m.chat, 'announcement').then((res) => m?.reply(`Success Closes The Group`)).catch((err) => m?.reply(jsonformat(err)))
 } else if (args[0] === 'open'){
-await ptz.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m?.reply(`Sukses Membuka Group`)).catch((err) => m?.reply(jsonformat(err)))
+await ptz.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m?.reply(`Successful Opening The Group`)).catch((err) => m?.reply(jsonformat(err)))
 } else {
  m?.reply(`Silahkan Ketik ${prefix + command} open/ ${prefix + command} close`)
  }
@@ -593,18 +593,18 @@ if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
  if (args[0] === 'open'){
-await ptz.groupSettingUpdate(m.chat, 'unlocked').then((res) => m?.reply(`Sukses Membuka Edit Info Group`)).catch((err) => m?.reply(jsonformat(err)))
+await ptz.groupSettingUpdate(m.chat, 'unlocked').then((res) => m?.reply(`Successful Opening Edit Info Group`)).catch((err) => m?.reply(jsonformat(err)))
  } else if (args[0] === 'close'){
-await ptz.groupSettingUpdate(m.chat, 'locked').then((res) => m?.reply(`Sukses Menutup Edit Info Group`)).catch((err) => m?.reply(jsonformat(err)))
+await ptz.groupSettingUpdate(m.chat, 'locked').then((res) => m?.reply(`Successfully Closing Edit Info Group`)).catch((err) => m?.reply(jsonformat(err)))
  } else {
- m?.reply(`Silahkan Ketik ${prefix + command} open/ ${prefix + command} close`)
+ m?.reply(`Please type ${prefix + command} open/ ${prefix + command} close`)
 }
 }
 break
 //=================================================//
 case 'join': {
-if (!isCreator) return m?.reply('Khusus Owner Bot')
-if (!text) return m?.reply('Masukkan Link Group!')
+if (!isCreator) return m?.reply('Special Owner Bot')
+if (!text) return m?.reply('Enter The Group Link!')
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return m?.reply('Link Invalid!')
 let result = args[0].split('https://chat.whatsapp.com/')[1]
 await ptz.groupAcceptInvite(result).then((res) => m?.reply(jsonformat(res))).catch((err) => m?.reply(jsonformat(err)))
@@ -613,13 +613,13 @@ break
 //=================================================//
 case 'leave': {
 if (!isOwner) return m?.reply(mess.owner)
-m?.reply("Aku Pergi :v")
+m?.reply("Left :v")
 await ptz.groupLeave(m?.chat).then((res) => m?.reply(jsonformat(res))).catch((err) => m?.reply(jsonformat(err)))
 }
 break
 //=================================================//
 case 'hidetag': case 'h': {
-if (!m?.isGroup && isAdmins) return m?.reply('Khusus Group Dan Admin Group')
+if (!m?.isGroup && isAdmins) return m?.reply('Special Group And Admin Group')
 ptz.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted:m})
 }
 break
@@ -628,7 +628,7 @@ case 'editsubjek': {
 if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
-if (!text) return m?.reply('Text nya ?')
+if (!text) return m?.reply('The Text?')
 await ptz.groupUpdateSubject(m.chat, text).then((res)).catch((err) => m?.reply(jsonformat(err)))
 }
 break
@@ -637,7 +637,7 @@ case 'editdesk':{
 if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
-if (!text) return m?.reply('Text Nya ?')
+if (!text) return m?.reply('The text?')
 await ptz.groupUpdateDescription(m.chat, text).then((res)).catch((err) => m?.reply(jsonformat(err)))
 }
 break
@@ -645,7 +645,7 @@ break
 case 'tagall': {
 if (!m?.isGroup && !isAdmins) return
 let teks = `══✪〘 *👥 Tag All* 〙✪══
- ➲ *Message : ${q ? q : 'kosong'}*\n\n`
+ ➲ *Message : ${q ? q : 'Empty'}*\n\n`
 for (let mem of participants) {
 teks += `⭔ @${mem?.id.split('@')[0]}\n`
 }
@@ -658,13 +658,13 @@ if (!m.isGroup) return m.reply(mess.group)
 if (!isAdmins && !isGroupOwner && !isCreator) return m.reply(mess.admin)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (args[0] === "on") {
-if (db.data.chats[m?.chat].antilink) return m?.reply(`Sudah Aktif Sebelumnya 🕊️`)
+if (db.data.chats[m?.chat].antilink) return m?.reply(`Previously inactive🕊️`)
 db.data.chats[m?.chat].antilink = true
-m?.reply(`Antilink Group WhatsApp Aktif 🕊️`)
+m?.reply(`Antilink is being activated🕊️`)
 } else if (args[0] === "off") {
 if (!db.data.chats[m?.chat].antilink) return m?.reply(`Sudah Nonaktif Sebelumnya 🕊`)
 db.data.chats[m?.chat].antilink = false
-m?.reply(`Antilink Group WhatsApp Nonaktif 🕊️`)
+m?.reply(`Antilink Whatsapp Group is Non-active 🕊️`)
 } else {
 m?.reply(`Mode ${command}\n\n\nKetik ${prefix + command} on/off`)
 }
@@ -678,16 +678,16 @@ if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (args.length < 1) return m?.reply(`Example ${prefix + command} on/off`)
 if (q == 'on'){
 global.db.data.chats[m?.chat].antilinkv2 = true
-m?.reply(`Berhasil Mengaktifkan antilinkv2`)
+m?.reply(` Successfully Activated Antilinkv2`)
 } else if (q == 'off'){
 global.db.data.chats[m?.chat].antilinkv2 = false
-m?.reply(`Berhasil Mematikan antilinkv2`)
+m?.reply(`Successfully Deactivated Antilinkv2`)
 }
 break
 //=================================================//
 case 'lahelu':
 case 'meme': {
-if (args.length == 0) return m?.reply(`Contoh: ${prefix + command} Adel Masuk TV`)
+if (args.length == 0) return m?.reply(`Example: ${prefix + command} Adel Entering TV`)
 let res = await nganuin(`https://www.putz.my.id/api/download?type=lahelu&q=${args[0]}`)
 let mediaType = res.result.media.includes('video-') ? 'video' : res.result.media.includes('image-') ? 'image' : null;
 if (mediaType === 'video') {
@@ -695,13 +695,13 @@ ptz.sendMessage(m?.chat, { video: { url: res.result.media} , caption: res.result
 } else if (mediaType === 'image') {
 ptz.sendMessage(m?.chat, { image: { url: res.result.media}, caption: res.result.title }, { quoted: m })
 } else {
-m?.reply("URL Yang Diberikan Tidak Mendukung Video Atau Gambar.")
+m?.reply("URL Given.")
 }}
 break;
 //=================================================//
     case "ai": {
-    if (!text) return m.reply("Masukan text!")
-    let prompt = "Nama kamu adalah Shyzu" // Isi prompt AI kamu disini
+    if (!text) return m.reply("Enter the text!")
+    let prompt = "Your Name Is Dark-Love-MD" // Isi prompt AI kamu disini
     try {
       let { data } = await axios({
         "method": "GET",
@@ -720,9 +720,9 @@ break;
     break;
 //=================================================//
 case 'pin': case 'pinterest':{
-if (!text) return m?.reply(`Contoh: ${prefix + command} Adel JKT48`)
+if (!text) return m?.reply(`Example: ${prefix + command} Adel JKT48`)
 let res = await pinterest(text)
-ptz.sendMessage(m?.chat,{image: {url:getRandom(res)}, caption: "Nih Bwang"},{quoted:m})
+ptz.sendMessage(m?.chat,{image: {url:getRandom(res)}, caption: "Here You Go 😎😇"},{quoted:m})
 }
 break;
 //=================================================//
@@ -740,7 +740,7 @@ case "logobear":
 case "berry":
 case "pencil":
 case "glitch":{
-if (!text) return m.reply("Ex : ${prefix + command} Siputzx")
+if (!text) return m.reply("Example : ${prefix + command} Siputzx")
 await loading()
 ptz.sendMessage(m?.chat,{image: {url: `https://dsgner.vercel.app/api/textpro/${command}?text=${text}`}, caption: "Done"},{quoted:m})
 }
@@ -753,7 +753,7 @@ case "glitchtiktok":
 case "glitch2":
 case "porn-hub":{
 let t = text.split('|');
-if (t.length < 2) return m.reply(`Ex : ${prefix + command} Siputzx|Production`);
+if (t.length < 2) return m.reply(`Example : ${prefix + command} Siputzx|Production`);
 let text1 = t[0];
 let text2 = t[1];
 await loading()
@@ -775,7 +775,7 @@ case "metallic":
 case "naruto":
 case "shadow-sky":
 case "flaming":{
-if (!text) return m.reply(`Contoh : ${prefix + command} AdelJKT48`)
+if (!text) return m.reply(`Example : ${prefix + command} AdelJKT48`)
 await loading()
 ptz.sendMessage(m?.chat,{image: {url: `https://dsgner.vercel.app/api/photooxy/${command}?text=${text}`}, caption: "Nih Bwanggg"},{quoted:m})
 }
@@ -783,7 +783,7 @@ break;
 //=================================================//
 case "pubg":{
 let t = text.split('|');
-if (t.length < 2) return m.reply(`Cont9h : ${prefix + command} Pakoy|OffC`);
+if (t.length < 2) return m.reply(`Example : ${prefix + command} Pakoy|OffC`);
 let text1 = t[0];
 let text2 = t[1];
 await loading()
@@ -792,9 +792,9 @@ ptz.sendMessage(m?.chat,{image: {url: `https://dsgner.vercel.app/api/textpro/${c
 break
 //=================================================//
 case "gemini-img":
-if (!quoted) return m?.reply(`Balas Image Dengan Caption ${prefix + command}`);
-if (!/image/.test(mime)) return m?.reply("Hanya Support Gambar");
-if (!text) return m?.reply("Mau Nanya Apa Sama Gambar Itu?")
+if (!quoted) return m?.reply(`Reply image with Caption ${prefix + command}`);
+if (!/image/.test(mime)) return m?.reply("Just Support The Picture");
+if (!text) return m?.reply("What Do You Want To Ask The Picture?")
 try {
 let bufferData = await quoted.download();
 let base64Data = bufferData.toString('base64');
@@ -809,14 +809,14 @@ m?.reply(e);
 break;
 //=================================================//
 case "zee":{
-if (!text) return m?.reply("Mau Nanya Apa Sama Azizi Kak?")
+if (!text) return m?.reply("What do you want to ask Azizi sis?")
 let { data } = await axios.get("https://gmni.vercel.app/api/naw?text=" + text)
 m?.reply(data.text)
 }
 break
 //=================================================//
 case "adel":{
-if (!text) return m?.reply("Mau Nanya Apa Sama Adel Kak")
+if (!text) return m?.reply("Want to ask what is Adel sis")
 let { data } = await axios.get("https://gmni.vercel.app/api/naw?text=" + text)
 m?.reply(data.text)
 }
@@ -825,8 +825,8 @@ break
 case "instagram":
 case "ig":{
 m.reply('*Wait Process Kak*')  
-if (!text) return m.reply("Mana URL-Nya?");
-if (m.isGroup) return m.reply(`Karena Fitur Ini Bisa Menyebabkan Spam Maka Fitur ${command} Tidak Bisa Bi Gunakan Di Group`)
+if (!text) return m.reply("Where is the URL?");
+if (m.isGroup) return m.reply(`Because this feature can cause spam the feature ${command} cannot be used in the group`)
 const regex = /^(?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:p|tv|reel)\/([^\/?#&]+)/i;
 if (regex.test(text)) {
 const { data } = await axios.post("https://allvideodownloader.cc/wp-json/aio-dl/video-data/",{url: text});
@@ -837,19 +837,19 @@ for (let i = 0; i < totalCount; i++) {
 await ptz.sendFile(m.chat, urls[i], 'file', `${i + 1}/${totalCount}`, m);
 }
 } else {
-await m?.reply('Maaf, Sedang Error.');
+await m?.reply('Sorry there is an Error.');
 }
 } else {
-await m.reply('URL Yang Diberikan Bukan URL Instagram.');
+await m.reply('URL Given Is Not An Instagram URL.');
 }}
 break;
 //=================================================//
 case "facebook":
 case "fb":{
-if (!text) return m.reply("Mana URL-Nya?");
+if (!text) return m.reply("Where Is The URL?");
 const facebookRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com\/)/;
 if (!facebookRegex.test(text)) {
-return m.reply("URL Yang Anda Berikan Bukan URL Facebook.");
+return m.reply("The URL you provided is not a Facebook URL.");
 }
 const { data } = await axios.post("https://allvideodownloader.cc/wp-json/aio-dl/video-data/", { url: text });
 await ptz.sendMessage(m?.chat, { video: { url: data.medias[0].url }, caption: "Nihh Bwangg", fileName: `tiktok.mp4`, mimetype: 'video/mp4' })
@@ -857,8 +857,8 @@ await ptz.sendMessage(m?.chat, { video: { url: data.medias[0].url }, caption: "N
 break;
 //=================================================//
 case "ttslide":{
-if (!text) return m.reply("Link Nya Mana Bwang?")
-if (m.isGroup) return m.reply("Karena Fitur Ini Bisa Menyebabkan Spam Maka Fitur ttslide Tidak Bisa Di Gunakan Di Group")
+if (!text) return m.reply("Where is the Link?")
+if (m.isGroup) return m.reply("Because This Feature Can Cause Spam, The ttslide Feature Cannot Be Used In the Group")
 const { data } = await axios.post("https://allvideodownloader.cc/wp-json/aio-dl/video-data/",{url:text});
 let urls = data.medias.map(item => item.url);
 const totalCount = urls.length;
@@ -873,7 +873,7 @@ break;
 //=================================================//
 case 'tiktoks':
 case 'ttsearch': {
-if (args.length == 0) return m?.reply(`Contoh: ${prefix + command} Member JKT48 Grad`)
+if (args.length == 0) return m?.reply(`Example: ${prefix + command} Member JKT48 Grad`)
 await loading()
 let res = await nganuin(`https://www.putz.my.id/api/download?type=tiktoks&q=${args[0]}`)
 ptz.sendMessage(m?.chat, { video: { url: res.result.no_watermark }, caption: res.result.title, fileName: `tiktok.mp4`, mimetype: 'video/mp4' }).then(() => {
@@ -884,7 +884,7 @@ break;
 //=================================================//
 case 'tiktok':
 case 'tt': {
-if (args.length === 0) return m?.reply(`Contoh: ${prefix + command} Link Lu`);
+if (args.length === 0) return m?.reply(`Example: ${prefix + command} Link`);
 await loading();
 try {
 let data = await tiktok(args[0]);
@@ -892,14 +892,14 @@ ptz.sendMessage(m?.chat, { video: { url: data.nowm }, caption: data.title, fileN
 ptz.sendMessage(m?.chat, { audio: { url: data.audio }, fileName: `tiktok.mp3`, mimetype: 'audio/mp3' });
 });
 } catch (e) {
-m.reply(`Error, Jika Itu Adalah Tautan Tiktok Slide, Harap Gunakan Fitur ${prefix}ttslide`);
+m.reply(`Error, If it is a tiktok slide link, please use the feature ${prefix}ttslide`);
 }
 }
 break;
 //=================================================//
   
 case "txt2img": {
-  if (!text) return m.reply("Masukan teks!")
+  if (!text) return m.reply("Enter A Text!")
   try {
     var { data } = await axios({
       "method": "GET",
@@ -931,7 +931,7 @@ lang = args[0] ? args[0] : 'id', text = m?.quoted.text
 const translate = require('@vitalets/google-translate-api')
 await loading()
 let res = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null)
-if (!res) return m?.reply(`Error : Bahasa"${lang}" Tidak Support`)
+if (!res) return m?.reply(`Error : Language"${lang}" Correct Support`)
 m?.reply(`*From The Language:* ${res.from?.language.iso}\n*To The Language:* ${lang}\n\n*Translation:* ${res.text}`.trim())
 }
 break
@@ -1016,7 +1016,7 @@ else m?.reply(data.desc)
 break
 //=================================================//
 case 'colong': case 'wm': {
-if (!m?.quoted) return m?.reply('Reply Sticker Nya Kak')
+if (!m?.quoted) return m?.reply('Reply Sticker')
 await loading()
 let stiker = false
 try {
@@ -1519,7 +1519,7 @@ ptz.sendMessage(m?.chat, {
 }
 break
 case 'ban':{
-m.reply('*Pilih Nomer Yang Ada Ingin Ban Tuan*')
+m.reply('*Selet the number you want to ban*')
 }
 break
 case 'nokos':{
