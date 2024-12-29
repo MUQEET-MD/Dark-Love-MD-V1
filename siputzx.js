@@ -255,7 +255,7 @@ await loading()
  ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⳹
 
 ┏━━━━━━━━❍
-┃ *𝙰𝙻𝙻𝙼𝙴𝙽𝚄*
+┃ *darklove*
 ┃ *𝙹𝙺𝚃𝟺𝟾𝙼𝙴𝙽𝚄*
 ┗━━━━━━━━❍
 
@@ -327,7 +327,7 @@ const tek = `𝗛𝗲𝗹𝗹𝗼 @${m?.sender.split('@')[0]}⁩ 👋 *Welcome T
 Type (.darklove) To Check All Bot Features 😎🤩🙂‍↕️
 
 ╭─「 *O W N E R M E N U* 」
-│ ❒ ${prefix}bot
+│ ❒ ${prefix}darklovebot
 │ ❒ ${prefix}join
 │ ❒ ${prefix}leave
 │ ❒ ${prefix}autorecordty
@@ -339,7 +339,7 @@ Type (.darklove) To Check All Bot Features 😎🤩🙂‍↕️
 │ ❒ ${prefix}sticker
 │ ❒ ${prefix}cls
 │ ❒ ${prefix}smeme 
-│ ❒ ${prefix}qc
+│ ❒ ${prefix}darkloveqc
 ╰❑
 
 ╭─「 *T O O L S M E N U* 」
@@ -413,6 +413,7 @@ Type (.darklove) To Check All Bot Features 😎🤩🙂‍↕️
 │ ❒ ${prefix}tagall
 │ ❒ ${prefix}group
 │ ❒ ${prefix}editgroupsubject
+│ ❒ ${prefix}editdesk
 │ ❒ ${prefix}editinfo
 │ ❒ ${prefix}antilink
 │ ❒ ${prefix}antilinkv2
@@ -429,7 +430,7 @@ Type (.darklove) To Check All Bot Features 😎🤩🙂‍↕️
  
  
 ╭─「 *☠️ _BAN_* 」
-│ ☠️ ${prefix}ban
+│ ☠️ ${prefix}darkloveban
 ╰❑
  
           ╭─「 *Dark-Love-MD-V1 ❤️🌹☠️* 」
@@ -1096,7 +1097,7 @@ return ptz.sendFile(m?.chat, buffer, 'media.jpg', msg[type].caption || '', m)
 }
 break
 //=================================================//
-case 'qc': {
+case 'darkloveqc': {
 const { quote } = require('./lib/quote.js')
 let text
 if (args.length >= 1) {
@@ -1402,58 +1403,10 @@ ptz.sendMessage(m.chat,{audio: fs.readFileSync('./media/sound/runtime.mp3')},{qu
 break
 //=================================================//
 
-case 'play': {
-    if (!text) return reply(`*Example*: ${prefix + command} Faded by Alan Walker`);
-
-    try {
-
-        await David.sendMessage(m.chat, { react: { text: `🎵`, key: m.key } });
-
-        const yts = require("yt-search");
-        let search = await yts(text);
-        let video = search.all[0]; // 
-        let body = `*Dark_Love-MD-V1_MUSIC BUZZER*\n` +
-                   `> Title: *${video.title}*\n` +
-                   `> Views: *${video.views}*\n` +
-                   `> Duration: *${video.timestamp}*\n` +
-                   `> Uploaded: *${video.ago}*\n` +
-                   `> Url: *${video.url}*\n> Powered By Dark-Love-MD V1`;
-
-        
-        await David.sendMessage(m.chat, {
-            image: { url: video.thumbnail },
-            caption: body
-        }, { quoted: m });
-
-
-        const apiResponse = await axios.get(`https://api.davidcyriltech.my.id/download/ytmp3`, {
-            params: { url: video.url }
-        });
-
-        if (apiResponse.data.success) {
-            const { download_url, title, thumbnail } = apiResponse.data.result;
-
-
-            await David.sendMessage(m.chat, {
-                audio: { url: download_url },
-                mimetype: 'audio/mp4',
-                fileName: `${title}.mp3`,
-                caption: `🎧 *Here's your song:*\n> *Title:* ${title}`,
-                thumbnail: { url: thumbnail } /
-            }, { quoted: m });
-        } else {
-            reply(`*Error fetching the song!*`);
-        }
-    } catch (error) {
-        console.error('Error during play command:', error);
-        reply(`*An error occurred while processing your request. Please try again later.*`);
-    }
-    break;
-}
  
 //=================================================//
  
- case 'ban':{
+ case 'darkloveban':{
 m.reply('*Pls select the number that you want to ban*')
 }
 break
@@ -1931,7 +1884,7 @@ showAdAttribution: true
 }}}}}}, {})
 }
 break
-case 'test': case 'koy': case 'pakoy': case 'bot':{
+case 'test': case 'koy': case 'pakoy': case 'darklovebot':{
 m.reply('Dark-Love-MD-V1 is online >//<')
 }
 break
