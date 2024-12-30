@@ -102,7 +102,7 @@ markOnlineOnConnect: true,
 browser: ["Ubuntu", "Chrome", "20.0.04"],
 });
 if(usePairingCode && !ptz.authState.creds.registered) {
-const phoneNumber = await question('Your Whatsapp Number : 2349071214451 \n');
+const phoneNumber = await question('Your Whatsapp Number : \n');
 const code = await ptz.requestPairingCode(phoneNumber.trim())
 console.log(`Pairing Code: ${code}`)
 
