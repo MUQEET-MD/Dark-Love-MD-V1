@@ -1,12 +1,12 @@
 {
-  "name": " pakoy",
+  "name": "Dark-Love-MD-V1",
   "version": "0.0.1",
   "description": "Simpel Bot Using Library Baileys",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "pakoy",
+  "author": "Dark-Love-MD-V1",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "npm:@whiskeysockets/baileys",
