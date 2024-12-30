@@ -1410,14 +1410,20 @@ case 'play': {
         await David.sendMessage(m.chat, { react: { text: 🎵, key: m.key } });
 
         const yts = require("yt-search");
-        let search = await yts(text);
-        let video = search.all[0]; // 
-        let body = *QUEEN_ANITA-V4_MUSIC - PLAYER*\n +
-                   > Title: *${video.title}*\n +
-                   > Views: *${video.views}*\n +
-                   > Duration: *${video.timestamp}*\n +
-                   > Uploaded: *${video.ago}*\n +
-                   > Url: *${video.url}*\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀᴠɪᴅ ᴄʏʀɪʟ ᴛᴇᴄʜ;
+        const axios = require("axios");
+
+        const search = await yts(text);
+        const video = search.all[0];
+
+        if (!video) return reply(*No results found for:* ${text});
+
+        const body = *QUEEN_ANITA-V4_MUSIC - PLAYER*\n +
+                     > *Title:* ${video.title}\n +
+                     > *Views:* ${video.views}\n +
+                     > *Duration:* ${video.timestamp}\n +
+                     > *Uploaded:* ${video.ago}\n +
+                     > *Url:* ${video.url}\n +
+                     > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀᴠɪᴅ ᴄʏʀɪʟ ᴛᴇᴄʜ;
 
         await David.sendMessage(m.chat, {
             image: { url: video.thumbnail },
@@ -1436,10 +1442,18 @@ case 'play': {
                 mimetype: 'audio/mp4',
                 fileName: ${title}.mp3,
                 caption: 🎧 *Here's your song:*\n> *Title:* ${title},
-                thumbnail: { url: thumbnail }
+                ptt: false,
+                contextInfo: {
+                    externalAdReply: {
+                        title: title,
+                        body: "QUEEN_ANITA-V4_MUSIC",
+                        thumbnailUrl: thumbnail,
+                        sourceUrl: video.url
+                    }
+                }
             }, { quoted: m });
         } else {
-            reply(*Error fetching the song!*);
+            reply(*Error fetching the song! Please try again later.*);
         }
     } catch (error) {
         console.error('Error during play command:', error);
