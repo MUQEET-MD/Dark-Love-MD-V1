@@ -1403,7 +1403,51 @@ ptz.sendMessage(m.chat,{audio: fs.readFileSync('./media/sound/runtime.mp3')},{qu
 break
 //=================================================//
 
- 
+case 'play': {
+    if (!text) return reply(*Example*: ${prefix + command} Faded by Alan Walker);
+
+    try {
+        await David.sendMessage(m.chat, { react: { text: 🎵, key: m.key } });
+
+        const yts = require("yt-search");
+        let search = await yts(text);
+        let video = search.all[0]; // 
+        let body = *QUEEN_ANITA-V4_MUSIC - PLAYER*\n +
+                   > Title: *${video.title}*\n +
+                   > Views: *${video.views}*\n +
+                   > Duration: *${video.timestamp}*\n +
+                   > Uploaded: *${video.ago}*\n +
+                   > Url: *${video.url}*\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀᴠɪᴅ ᴄʏʀɪʟ ᴛᴇᴄʜ;
+
+        await David.sendMessage(m.chat, {
+            image: { url: video.thumbnail },
+            caption: body
+        }, { quoted: m });
+
+        const apiResponse = await axios.get(https://api.davidcyriltech.my.id/download/ytmp3, {
+            params: { url: video.url }
+        });
+
+        if (apiResponse.data.success) {
+            const { download_url, title, thumbnail } = apiResponse.data.result;
+
+            await David.sendMessage(m.chat, {
+                audio: { url: download_url },
+                mimetype: 'audio/mp4',
+                fileName: ${title}.mp3,
+                caption: 🎧 *Here's your song:*\n> *Title:* ${title},
+                thumbnail: { url: thumbnail }
+            }, { quoted: m });
+        } else {
+            reply(*Error fetching the song!*);
+        }
+    } catch (error) {
+        console.error('Error during play command:', error);
+        reply(*An error occurred while processing your request. Please try again later.*);
+    }
+    break;
+}
+  
 //=================================================//
  
  case 'darkloveban':{
