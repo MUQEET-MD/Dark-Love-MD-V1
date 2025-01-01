@@ -1,6 +1,9 @@
+![IMG-20241031-WA0181](https://github.com/user-attachments/assets/573c03d9-cf77-4d7c-abfd-3dd2f41a0734)
+
 <p align="center">  
   <a href="https://github.com/user-attachments/assets/573c03d9-cf77-4d7c-abfd-3dd2f41a0734">
-    <img alt="secktor docs" height="300" src="https://telegra.ph/file/ec469447d91f56a74f189.jpg">
+    <img alt="secktor docs" height="300" src="![IMG-20241031-WA0181](https://github.com/user-attachments/assets/573c03d9-cf77-4d7c-abfd-3dd2f41a0734)
+      ">
     <h1 align="center"> DARK LOVE.</h1>
   </a>
 </p>  
@@ -74,7 +77,6 @@
   </a>
 </p># Dark-Love-MD-V1
 Dark-Love-MD V1 Is the best bot ever created by AY TECH
-![IMG-20241031-WA0181](https://github.com/user-attachments/assets/573c03d9-cf77-4d7c-abfd-3dd2f41a0734)
 
 ### Deploy On TERMUX
 For termux users:
