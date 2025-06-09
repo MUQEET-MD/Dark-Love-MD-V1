@@ -88,7 +88,7 @@ module.exports = [ {
       const latency = `${(endTime - startTime).toFixed(2)} ms`;
       
       await Kango.sendMessage(m.chat, {
-        text: `*⚡ 𝙆𝘼𝙉𝙂𝙊 𝙎𝙥𝙚𝙚𝙙:* ${latency}`,
+        text: `*⚡ Dark-Love-MD-V1 𝙎𝙥𝙚𝙚𝙙:* ${latency}`,
         edit: sentMessage.key, 
         contextInfo: { quotedMessage: m.message }
       });
@@ -104,7 +104,7 @@ module.exports = [ {
 }, {
   command: ["alive", "uptime"],
   operate: async ({ Kango: David, m, reply }) => {
-    const msgai = "*🌹Hi. I am 👑Dark-Love-MD-V1, a friendly WhatsApp bot from Nigeria🇬🇭, created by AY TECH. Don't worry, I'm still Alive☺🚀*";
+    const msgai = "*🌹Hi. I am 👑Dark-Love-MD-V1, a friendly WhatsApp bot from Nigeria, created by AY TECH. Don't worry, I'm still Alive☺🚀*";
     const imagePath = './Images/alive.jpg'; // Keep or update if you want to change this too
 
     // Random music from the 'Music' folder
