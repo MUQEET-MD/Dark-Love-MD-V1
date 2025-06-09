@@ -51,11 +51,10 @@ Click the button below to fork Dark-Love-MD-V1 Repository to your GitHub account
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
-<a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
 <p align="left">
   <a href="https://adiza-session.onrender.com?">
-    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20FIRST%20PAIR%20CODE%20WEB-ffcc00?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20SECOND%20PAIR%20CODE%20WEB-ffcc00?style=for-the-badge"/>
   </a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
@@ -152,7 +151,6 @@ Click the button below to fork Dark-Love-MD-V1 Repository to your GitHub account
 ## Credits
 
 - [Hector](https://github.com/OfficialKango)
-- [Baileys](https://github.com/WhiskeySockets)
 - [Cypher-X](https://github.com/Dark-Xploit) 
 - [Matrix](https://github.com/Matri199)
 
