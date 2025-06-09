@@ -48,16 +48,12 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
 🔑 Get Session ID (WhatsApp Pair Code Login)
 
 > Generate your session ID from the link below:
-<p align="left">
-  <a href="https://kango-ef1f620b32d8.herokuapp.com/?">
-    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20FIRST%20PAIR%20CODE%20WEB-ffcc00?style=for-the-badge"/>
-  </a>
-</p>
+
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
 <p align="left">
   <a href="https://pair-xmd-kango.onrender.com/pair?">
-    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20SECOND%20PAIR%20CODE%20WEB-ffcc00?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20FIRST%20PAIR%20CODE%20WEB-ffcc00?style=for-the-badge"/>
   </a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
@@ -81,7 +77,7 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
 <details>
 <summary>𝘋𝘌𝘗𝘓𝘖𝘠 𝘛𝘖 𝘏𝘌𝘙𝘖𝘒𝘜, 𝘔𝘌𝘛𝘏𝘖𝘋 2</summary>
  
-* `Fork` KANGO-XMD Repository or `sync` if you had forked.
+* `Fork` Dark-Love-MD-V1 Repository or `sync` if you had forked.
 * `Link` to your WhatsApp using Server 1, 2 or 3
 * Incase you use Server 2, paste the session id on settings.js @SESSION_ID
 * If you used Server 3, upload the `creds.json` received in the `session` folder.
@@ -92,7 +88,7 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
 * Then choose create new app
 * Enter your app name and Create.
 * Connect with your GitHub account.
-* Search KANGO-XMD, and connect.
+* Search Dark-Love-MD-V1, and connect.
 * Press deploy and wait for a few minutes.
 * Enjoy.
 </details>
@@ -105,7 +101,7 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
 <br>
 > Click below to download the bot file :
 <p align="left">
-<a href="https://github.com/OfficialKango/KANGO-XMD/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-green" alt="Rainhost Files" width="150"></a>
+<a href="https://github.com/ayodejibot/Dark-Love-MD-V1/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/DOWNLOAD%20FILES-green" alt="Rainhost Files" width="150"></a>
 <br>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
   
@@ -119,7 +115,7 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
   
 > Click below to deploy on Bot-Hosting :
 <p align="left">
-  <a href="https://bot-hosting.net/?aff=1132461929839984758">
+  <a href="https://bot-hosting.net/?aff=1375196409845776464">
     <img src="https://img.shields.io/badge/Deploy%20to%20Bot-hosting-9772a6?style=for-the-badge&logo=bothosting&logoColor=white"/>
   </a>
 </p>
@@ -150,55 +146,6 @@ Click the button below to fork KANGO-XMD Repository to your GitHub account:
  
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
-<details>
-<summary>𝘔𝘈𝘕𝘜𝘈𝘓 𝘐𝘕𝘚𝘛𝘈𝘓𝘓𝘔𝘌𝘕𝘛𝘚</summary>
-  
-## `REQUIREMENTS`
-* [Node.js](https://nodejs.org/en/)
-* [Git](https://git-scm.com/downloads)
-* [FFmpeg](https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2020-12-08-13-03/ffmpeg-n4.3.1-26-gca55240b8c-win64-gpl-4.3.zip)
-* [Libwebp](https://developers.google.com/speed/webp/download)
-* Any text editor
-  
-## `CLONE REPO & INSTALLATION DEPENDENCIES`
-```bash
-git clone https://github.com/OfficialKango/KANGO-XMD.git
-cd KANGO-XMD 
-npm start
-```
-
-## `FOR SSH/UBUNTU/LINUX`
-```bash
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install -y bash
-sudo apt-get install -y libwebp
-sudo apt-get install -y git
-sudo apt-get install -y nodejs
-sudo apt-get install -y ffmpeg
-sudo apt-get install -y wget
-sudo apt-get install -y imagemagick
-git clone https://github.com/OfficialKango/KANGO-XMD.git
-cd KANGO-XMD
-npm install
-npm start
-```
-
-## `FOR TERMUX`
-```bash
-pkg update && pkg upgrade -y && apt-get install -y bash libwebp git nodejs ffmpeg wget imagemagick && git clone https://github.com/OfficialKango/KANGO-XMD && cd KANGO-XMD && npm install && npm start
-```
-
-## `FOR 24/7 ACTIVATION PM2 (TERMUX)`
-```bash
-npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
-```
-
-## `FOR 24/7 ACTIVATION RE-EXECUTION PM2 (TERMUX)`
-```bash
-npm i -g pm2 && pm2 start index.js -f && pm2 save && pm2 logs
-```
-</details>
 
 ## Credits
 
@@ -211,9 +158,9 @@ npm i -g pm2 && pm2 start index.js -f && pm2 save && pm2 logs
 <h2 align="center">  𝗣𝗢𝗟𝗜𝗧𝗘 𝗡𝗢𝗧𝗜𝗖𝗘!
 </h2>
 
-- This bot is made for educational purposes `only` hence `DO NOT MISUSE`.
+- This bot is made for educational purposes `only` hence `DO NOT MISUSE`unless it may ban ur WhatsApp account.
 
-**© KANGO Bot**
+**© Dark-Love-MD-V1**
 ##
 ![MIT License](https://img.shields.io/badge/License-green.svg)
 
