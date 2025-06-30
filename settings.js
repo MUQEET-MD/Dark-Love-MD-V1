@@ -15,7 +15,7 @@ if (fs.existsSync('.env')) require('dotenv').config({ path: __dirname+'/.env' })
 
 //--------------------[ SESSION ID ]----------------------//
 
-global.SESSION_ID = process.env.SESSION_ID || '' 
+global.SESSION_ID = process.env.SESSION_ID || 'KANGO~NqUlkC5K#NwJYlZOxIaymnGszvMjElJxaOp-t9-BP9bM5LoZN9Pc' 
 //Enter your DARK-LOVE-MD-V2 session id here; must start with KANGO~
 
 //--------------------[ BOT NAME ]----------------------//
